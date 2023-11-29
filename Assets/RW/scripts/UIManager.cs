@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Animator startButton;
     public Animator settingsButton;
     public Animator dialog;
+    public Animator contentPanel;
+
     public void StartGame()
     {
         SceneManager.LoadScene("RocketMouse");
@@ -25,4 +27,10 @@ public class UIManager : MonoBehaviour
         settingsButton.SetBool("IsHidden", false);
         dialog.SetBool("IsHidden", true);
     }
+    public void ToggleMenu()
+    {
+        bool isHidden = contentPanel.GetBool("isHidden");
+        contentPanel.SetBool("isHidden", !isHidden);
+    }
+
 }
